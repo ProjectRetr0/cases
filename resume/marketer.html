@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Аксёнов Роман — Маркетолог</title>
+  <meta name="description" content="Резюме: маркетолог. 9+ лет digital, performance, воронки, CRM, AI-инструменты.">
+  <style>
+:root {
+  --bg: #1a1a1a;
+  --card: #262626;
+  --card-soft: #2e2e2e;
+  --text: #f0f0f0;
+  --muted: #a3a3a3;
+  --accent: #ff5722;
+  --accent-soft: rgba(255, 87, 34, 0.15);
+  --border: #333;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+a { color: var(--accent); }
+
+.container {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 32px 20px 64px;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+  background: rgba(26, 26, 26, 0.92);
+  border-bottom: 1px solid var(--border);
+}
+
+.topbar-inner {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.topbar-links {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 4px 18px rgba(255, 87, 34, 0.35);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255, 87, 34, 0.45);
+}
+
+.btn-ghost {
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.btn-ghost:hover { border-color: var(--accent); }
+
+.hero {
+  background: linear-gradient(135deg, #2a2a2a 0%, #1f1f1f 100%);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 32px 28px;
+  margin-bottom: 28px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+}
+
+.hero-top {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.hero-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent);
+  box-shadow: 0 8px 24px rgba(255, 87, 34, 0.25);
+  flex-shrink: 0;
+}
+
+.hero-info { flex: 1; min-width: 220px; }
+
+.hub-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent);
+  box-shadow: 0 8px 24px rgba(255, 87, 34, 0.25);
+  margin-bottom: 16px;
+}
+
+.cases-cta {
+  text-align: center;
+  margin-top: 8px;
+  margin-bottom: 32px;
+}
+
+.cases-cta .btn { min-width: 220px; }
+
+.hero-badge {
+  display: inline-block;
+  background: var(--accent-soft);
+  color: var(--accent);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.hero h1 {
+  margin: 0 0 8px;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  line-height: 1.15;
+}
+
+.hero-role {
+  font-size: 1.15rem;
+  color: #fff;
+  margin: 0 0 6px;
+}
+
+.hero-meta {
+  color: var(--muted);
+  margin: 0 0 18px;
+  font-size: 0.95rem;
+}
+
+.hero-salary {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--accent);
+  margin: 0 0 20px;
+}
+
+.contacts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.contact-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.88rem;
+}
+
+.contact-chip:hover { border-color: var(--accent); }
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.metric {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 18px 16px;
+  text-align: center;
+}
+
+.metric-value {
+  display: block;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.metric-label {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.section {
+  margin-bottom: 32px;
+}
+
+.section h2 {
+  margin: 0 0 18px;
+  font-size: 1.25rem;
+  color: #fff;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--accent);
+}
+
+.timeline { display: flex; flex-direction: column; gap: 18px; }
+
+.job {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 22px 22px 18px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.job:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(255, 87, 34, 0.08);
+}
+
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.job-title {
+  margin: 0;
+  font-size: 1.08rem;
+  color: #fff;
+}
+
+.job-period {
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.job-company {
+  color: var(--muted);
+  font-size: 0.92rem;
+  margin: 0 0 12px;
+}
+
+.job ul {
+  margin: 0;
+  padding-left: 18px;
+  color: #d8d8d8;
+}
+
+.job li { margin-bottom: 6px; }
+
+.job-results {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+
+.job-results strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--accent);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  background: #f5f5f5;
+  color: #1a1a1a;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.about, .ai-block, .education-block {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 22px;
+}
+
+.about p, .ai-block p { margin: 0 0 12px; color: #d8d8d8; }
+.about p:last-child, .ai-block p:last-child { margin-bottom: 0; }
+
+.ai-block {
+  border-color: rgba(255, 87, 34, 0.35);
+  background: linear-gradient(180deg, rgba(255, 87, 34, 0.08) 0%, var(--card) 100%);
+}
+
+.ai-block h3 {
+  margin: 0 0 12px;
+  color: var(--accent);
+  font-size: 1rem;
+}
+
+.ai-block ul {
+  margin: 0;
+  padding-left: 18px;
+  color: #d8d8d8;
+}
+
+.lang-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.lang-item {
+  background: var(--card-soft);
+  border-radius: 12px;
+  padding: 12px 14px;
+}
+
+.lang-item strong { display: block; margin-bottom: 4px; }
+
+.hub-header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.hub-header h1 {
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  margin: 0 0 10px;
+}
+
+.hub-header p {
+  color: var(--muted);
+  margin: 0;
+}
+
+.hub-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.hub-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hub-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(255, 87, 34, 0.12);
+}
+
+.hub-card h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #fff;
+}
+
+.hub-card p {
+  margin: 0;
+  color: var(--muted);
+  flex-grow: 1;
+}
+
+.hub-card .salary {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--accent);
+}
+
+.hub-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.site-footer {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+@media (max-width: 768px) {
+  .container { padding: 24px 16px 48px; }
+  .hero { padding: 24px 18px; }
+  .hero-top { justify-content: center; text-align: center; }
+  .hero-info { min-width: 100%; }
+  .job { padding: 18px 16px; }
+}
+
+  </style>
+</head>
+<body>
+<main class="container">
+<section class="hero">
+<div class="hero-top">
+<img class="hero-avatar" src="images/ava.png" alt="Аксёнов Роман Владимирович">
+<div class="hero-info">
+<span class="hero-badge">Опыт работы: 9 лет 3 месяца</span>
+<h1>Аксёнов Роман Владимирович</h1>
+<p class="hero-role">Маркетолог</p>
+<p class="hero-meta" style="margin-top:-8px;">Интернет-маркетолог</p>
+<p class="hero-meta">31 лет · Самара · Удалённо · редкие командировки</p>
+<p class="hero-salary">150 000 ₽ на руки</p>
+</div></div>
+<div class="contacts">
+<a class="contact-chip" href="tel:+7(987)441-77-31">+7 (987) 441-77-31</a>
+<a class="contact-chip" href="https://t.me/Aksenovv" target="_blank" rel="noopener">Telegram @Aksenovv</a>
+<a class="contact-chip" href="mailto:shupenkoroman@icloud.com">shupenkoroman@icloud.com</a>
+<a class="contact-chip" href="https://wa.me/6282266071030" target="_blank" rel="noopener">WhatsApp</a>
+</div></section>
+<div class="metrics"><div class="metric"><span class="metric-value">9+ лет</span><span class="metric-label">Digital-маркетинг</span></div><div class="metric"><span class="metric-value">до 15 млн ₽</span><span class="metric-label">Бюджеты кампаний</span></div><div class="metric"><span class="metric-value">150–200%</span><span class="metric-label">ROMI</span></div><div class="metric"><span class="metric-value">×2–3</span><span class="metric-label">Ускорение через AI</span></div></div>
+<section class="section"><h2>Обо мне</h2><div class="about"><p>Практикующий digital-маркетолог с 9-летним опытом. Работал руками: сам настраивал рекламу, строил воронки, анализировал данные и тестировал гипотезы.</p><p>Умею как исполнять конкретные задачи по каналам, так и выстраивать системную аналитику по всему циклу.</p><p>Сильная сторона: быстро нахожу точки роста через данные и гипотезы, а не интуицию. AI-инструменты ускоряют контент, анализ и тестирование минимум в 2–3 раза.</p><p>Ищу команду для работы в большой и постоянный проект.</p></div></section>
+<section class="section"><h2>Опыт работы</h2><div class="timeline"><article class="job">
+<div class="job-header">
+<h3 class="job-title">Маркетолог / Руководитель маркетинга (внешний)</h3>
+<span class="job-period">Сен 2025 — Май 2026</span>
+</div>
+<p class="job-company">Частный контракт (NDA) · Услуговый B2C · Удалённо · Высокий LTV, сезонный спрос</p>
+<ul><li>Полный цикл: стратегия → трафик → аналитика → автоматизация.</li><li>Маркетинговая стратегия под сезонный цикл, сегментация аудитории и офферы.</li><li>Рекламные кампании: настройка, оптимизация, аналитика по всем каналам.</li><li>Контроль LTV, CAC, ROMI, CPL — еженедельная отчётность.</li><li>AI-автоматизация: обработка лидов, реактивационные цепочки, дашборд собственника.</li></ul>
+<div class="job-results"><strong>Результаты</strong><ul><li>Выручка +45% г/г</li><li>Средний чек +50%</li><li>Отработка лидов в пик 25% → 80%</li></ul></div>
+</article><article class="job">
+<div class="job-header">
+<h3 class="job-title">Директор по маркетингу / CMO</h3>
+<span class="job-period">Июн 2024 — Авг 2025</span>
+</div>
+<p class="job-company">NDA · инфобизнес · Удалённо · Подряд</p>
+<ul><li>Бюджеты до 15 млн ₽, контроль LTV, CAC, ROMI, РНП.</li><li>Стратегии, контент-планы, масштабирование связок.</li><li>Управление подрядчиками, ТЗ на сайты, лендинги, Reels.</li></ul>
+<div class="job-results"><strong>Результаты</strong><ul><li>CPL ↓ 25–30%, ROMI 150–200%</li><li>Лидогенерация ×2,3 за 6 мес</li><li>Охваты +40%, ER +18%</li><li>Экономия до 20% бюджета на подрядчиках</li></ul></div>
+</article><article class="job">
+<div class="job-header">
+<h3 class="job-title">Продюсер / Маркетолог</h3>
+<span class="job-period">Сен 2022 — Июн 2024</span>
+</div>
+<p class="job-company">Vital Resources LTD · Удалённо · Консалтинг</p>
+<ul><li>Команда и подрядчики, Notion/Trello, стратегии и ТЗ на креативы.</li><li>Бюджеты, Power BI, Meta/Google, видео-продакшн, Telegram.</li></ul>
+<div class="job-results"><strong>Результаты</strong><ul><li>42 проекта «под ключ», 80% с результатом за 2 мес</li><li>ROI до 180%, Telegram +5 000 участников за 4 мес</li></ul></div>
+</article><article class="job">
+<div class="job-header">
+<h3 class="job-title">Руководитель отдела маркетинга (партнёр)</h3>
+<span class="job-period">Сен 2021 — Июл 2022</span>
+</div>
+<p class="job-company">RS-Result · Москва · Консалтинг</p>
+<ul><li>Маркетинг: стратегия, FB/Instagram, подрядчики, контент.</li><li>Реклама, автоворонки, аналитика GA/Я.Метрика.</li></ul>
+<div class="job-results"><strong>Результаты</strong><ul><li>Трафик +300% за 6 мес, CPL ↓ 30–35%, ROMI 150–180%</li><li>Конверсия лид → заявка +22%</li></ul></div>
+</article><article class="job">
+<div class="job-header">
+<h3 class="job-title">Маркетолог</h3>
+<span class="job-period">Фев 2019 — Сен 2020</span>
+</div>
+<p class="job-company">ООО «Бизнес Молодость» · Москва · Бизнес-образование</p>
+<ul><li>Каналы, гипотезы, команда 3–6 чел., бюджеты до 3 млн ₽.</li><li>Power BI, Roistat, A/B-тесты 4–6/нед.</li></ul>
+<div class="job-results"><strong>Результаты</strong><ul><li>+118% лидов, CPL ↓ 27%, ROMI 140–210%</li><li>CR лендингов 7–12%, чат-боты 30–35% заявок</li></ul></div>
+</article><article class="job">
+<div class="job-header">
+<h3 class="job-title">Руководитель группы продаж</h3>
+<span class="job-period">Янв 2018 — Июл 2018</span>
+</div>
+<p class="job-company">Сбер · Москва · Банк</p>
+<ul><li>Управление отделом, планы, скрипты, обучение менеджеров.</li></ul>
+
+</article><article class="job">
+<div class="job-header">
+<h3 class="job-title">Менеджер по работе с клиентами</h3>
+<span class="job-period">Сен 2015 — Июн 2018</span>
+</div>
+<p class="job-company">DS-MAX OSE ltd · Москва · ТНП, опт</p>
+<ul><li>Холодные продажи, презентации, отчётность.</li></ul>
+
+</article></div></section>
+<section class="section"><h2>Навыки</h2><div class="tags"><span class="tag">Digital Marketing</span><span class="tag">Internet Marketing</span><span class="tag">Маркетинговый анализ</span><span class="tag">Планирование рекламных кампаний</span><span class="tag">Разработка маркетинговой стратегии</span><span class="tag">Копирайтинг</span><span class="tag">Социальные сети</span><span class="tag">Маркетинговые исследования</span><span class="tag">Анализ рынка</span><span class="tag">Вирусный маркетинг</span><span class="tag">Продвижение бренда</span><span class="tag">Маркетинговое планирование</span><span class="tag">Наполнение контентом</span><span class="tag">Проведение презентаций</span><span class="tag">Организаторские навыки</span></div></section>
+<section class="section"><h2>AI-инструменты в работе</h2><div class="ai-block"><p>Использую AI не как хайп, а как рабочий инструмент: ускоряю производство контента, анализ данных и запуск гипотез.</p><ul><li>Генерация и тестирование офферов, заголовков, текстов объявлений — в 3–5 раз быстрее</li><li>Автоматизация отчётности: кабинеты → AI-анализ → готовые выводы</li><li>AI-агенты для обработки лидов и реактивации базы (опыт внедрения)</li><li>Собственный продукт: AI Digital Marketer — Next.js, TypeScript, OpenAI API, OAuth</li></ul></div></section>
+<section class="section"><h2>Образование</h2><div class="education-block"><p><strong>Российский государственный социальный университет, Москва</strong><br>Юриспруденция, гражданское право · 2020</p></div></section>
+<section class="section"><h2>Языки</h2><div class="lang-grid"><div class="lang-item"><strong>Русский</strong>Родной</div><div class="lang-item"><strong>Английский</strong>B1</div><div class="lang-item"><strong>Арабский</strong>B1</div></div></section>
+<section class="section"><h2>Рекомендации</h2><div class="timeline"><article class="job"><h3 class="job-title">Светлана Грант</h3><p class="job-company">Собственник · Vital Resources LTD</p></article><article class="job"><h3 class="job-title">Иванов Максим</h3><p class="job-company">Собственник · RS-Result</p></article></div></section>
+<section class="cases-cta">
+<a href="https://projectretr0.github.io/cases/" class="btn btn-primary" target="_blank" rel="noopener">Смотреть кейсы</a>
+</section>
+<footer class="site-footer">Резюме · Аксёнов Роман Владимирович</footer>
+</main>
+</body>
+</html>
